@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: app1nginxwithaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1nginxwithaks
+  template:
+    metadata:
+      labels:
+        app: app1nginxwithaks 
+    spec:
+      containers:
+        - name: app1nginxwithaks 
+          image: vibhoraksconreg.azurecr.io/app1nginxwithaks
+          ports:
+          - containerPort: 80
